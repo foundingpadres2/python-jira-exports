@@ -7,10 +7,8 @@ jira = JIRA({"server": "https://[JIRA_SUBDOMAIN].atlassian.net/"}, basic_auth=("
 project = '[JIRA_PROJECT_NAME]'
 new_issues = jira.search_issues("Project = " + project + " ORDER BY issueKey DESC", maxResults=200)
 
-df_attachments = []
-
 for issue in new_issues:
-    attachment_dict = {}
+   
     print(issue.key)
     issue_num = issue.key
 
